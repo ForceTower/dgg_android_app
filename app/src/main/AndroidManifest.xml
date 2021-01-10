@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dev.forcetower.destiny">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".DestinyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
+        android:fullBackupContent="false"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Destiny">
+        <activity
+            android:name=".view.SplashActivity"
+            android:theme="@style/Destiny.Translucent.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.MainActivity"
+            android:theme="@style/Destiny.Translucent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.stream.StreamActivity"
+            android:theme="@style/Destiny.Translucent"
+            android:supportsPictureInPicture="true"
+            android:resizeableActivity="true"/>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

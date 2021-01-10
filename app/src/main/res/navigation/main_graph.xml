@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_graph"
+    app:startDestination="@id/auth_options">
+
+    <fragment
+        android:id="@+id/auth_options"
+        android:name="dev.forcetower.destiny.view.auth.options.AuthOptionsFragment"
+        android:label="Auth options" >
+        <action
+            android:id="@+id/action_auth_options_to_auth_web_view"
+            app:destination="@id/auth_web_view" />
+    </fragment>
+    <fragment
+        android:id="@+id/auth_web_view"
+        android:name="dev.forcetower.destiny.view.auth.webview.AuthWebViewFragment"
+        android:label="Auth Webview" >
+        <argument
+            android:name="provider"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_auth_web_view_to_streamActivity"
+            app:destination="@id/stream" />
+        <action
+            android:id="@+id/action_auth_web_view_to_chat"
+            app:destination="@id/chat" />
+    </fragment>
+    <activity
+        android:id="@+id/stream"
+        android:name="dev.forcetower.destiny.view.stream.StreamActivity"
+        android:label="Stream" />
+    <fragment
+        android:id="@+id/chat"
+        android:name="dev.forcetower.destiny.view.stream.chat.ChatFragment"
+        android:label="ChatFragment" >
+        <argument
+            android:name="url"
+            app:argType="string" />
+        <argument
+            android:name="cookies"
+            app:argType="string" />
+    </fragment>
+</navigation>
